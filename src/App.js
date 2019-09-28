@@ -3,6 +3,7 @@ import './App.css';
 
 
 
+
 const players = [
   {name:"kim", score:30,id:1},
   {name:"lee", score:40,id:2},
