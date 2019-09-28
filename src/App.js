@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import {Header} from './Header';
+import {Player} from './Player';
+
 
 
 
@@ -16,15 +18,7 @@ const players = [
 // 2.	React Elemement를  리턴
 
 // 1. 첫글자가 대문자
-const Player = (props) => (
-  <div className="player">
-		<span className="player-name">
-			{/*3. 콜백함수 */}
-      <button className="remove-player" onClick={() => props.removePlayer(props.id)}>x</button>
-      {props.name}</span>
-    <Counter score={props.score}/>
-  </div>
-);
+
 
 class App extends React.Component{
 
@@ -65,31 +59,6 @@ class App extends React.Component{
 }
 
 
-class Counter extends React.Component{
-  state = {
-    score:30
-  }
-
-
-  increment=()=>{
-
-    this.setState((prevState) => ({
-
-      score: prevState.score +1
-
-    }));
-  }
-
-  render() {
-    return(
-      <div className="counter">
-        <button className="counter-action decrement">-</button>
-        <span className="counter-score">{this.state.score}</span>
-        <button className="counter-action increment" onClick={this.increment}>+</button>
-      </div>
-    )
-  }
-}
 
 
 
