@@ -24,7 +24,7 @@ class App extends React.Component{
 
   state={
     players : [
-      {name:"kim", score:40,id:1},
+      {name:"kim", score:30,id:1},
       {name:"lee", score:40,id:2},
       {name:"che", score:50,id:3},
       {name:"ji", score:60,id:4},
@@ -39,7 +39,9 @@ class App extends React.Component{
         {
           this.state.players.map(player => <Player name={player.name} score={player.score} key={player.id}
 
-                                                   removePlayer={this.handleRemovePlayer} id={player.id}/>)
+                                                   removePlayer={this.handleRemovePlayer}
+                                                   changeScore={this.handleChangeScore}
+                                                   id={player.id}/>)
 
         }
 
@@ -55,6 +57,11 @@ class App extends React.Component{
     this.setState(prevState => ({
       players: prevState.players.filter(item => item.id !== id)
     }))
+  }
+
+  handleChangeScore = (id,delta)=>{
+    console.log(id,delta);
+
   }
 }
 
