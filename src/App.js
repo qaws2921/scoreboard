@@ -47,7 +47,7 @@ class App extends React.Component{
         }
 
 
-        <AddPlayerForm/>
+        <AddPlayerForm addPlayer={this.handleAddPlayer}/>
       </div>
     )
   }
@@ -71,6 +71,10 @@ class App extends React.Component{
       }
     })
 
+  }
+
+  handleAddPlayer(name){
+    console.log(name);
   }
 }
 
