@@ -3,14 +3,14 @@ import Counter from './Counter';
 
 export class Player extends React.Component {
 	render(){
-	console.log(this.props.name, ' rendered');
+	const {removePlayer , id , name,score,changeScore} = this.props;
 		return (
 			<div className="player">
 		<span className="player-name">
 			{/*3. 콜백함수 */}
-			<button className="remove-player" onClick={() => this.props.removePlayer(this.props.id)}>x</button>
-			{this.props.name}</span>
-				<Counter score={this.props.score} changeScore={this.props.changeScore} id={this.props.id}/>
+			<button className="remove-player" onClick={() => removePlayer(id)}>x</button>
+			{name}</span>
+				<Counter score={score} changeScore={changeScore} id={id}/>
 			</div>
 		)
 	}
