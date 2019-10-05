@@ -7,12 +7,6 @@ import AddPlayerForm from "./AddPlayerForm";
 
 
 
-const players = [
-  {name:"kim", score:30,id:1},
-  {name:"lee", score:40,id:2},
-  {name:"che", score:50,id:3},
-  {name:"ji", score:60,id:4},
-];
 
 
 // function component  만드는 법
@@ -24,6 +18,7 @@ const players = [
 class App extends React.Component{
 
   state={
+    maxId:4,
     players : [
       {name:"kim", score:30,id:1},
       {name:"lee", score:40,id:2},
@@ -73,8 +68,21 @@ class App extends React.Component{
 
   }
 
-  handleAddPlayer(name){
-    console.log(name);
+  handleAddPlayer = (name) =>{
+    this.setState(prevState => {
+      // prevState.players.push({name:name, score:0, id:++this.maxId});
+      // return {
+      //   players:[...prevState.players]
+
+      // }
+    const players = [...prevState.players];
+    players.push({name:name, score:0, id:++prevState.maxId});
+    return {
+      players
+    }
+
+
+    })
   }
 }
 
