@@ -1,6 +1,7 @@
 import React from 'react';
 import {Stats} from './Stats';
 import {Stopwatch} from './Stopwatch';
+import PropTypes from 'prop-types';
 
 export const Header = ({players,title}) => {
 	return (
@@ -11,4 +12,18 @@ export const Header = ({players,title}) => {
 			<Stopwatch/>
 		</header>
 	);
+}
+
+
+Header.propTypes = {
+	players: PropTypes.arrayOf(PropTypes.shape({
+		id:PropTypes.number,
+		score:PropTypes.number,
+		name:PropTypes.string
+	})),
+	title: PropTypes.string
+}
+
+Header.defaultProps ={
+	title : 'sss'
 }
